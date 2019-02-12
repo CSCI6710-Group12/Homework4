@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.bundle.min.js" integrity="sha384-zDnhMsjVZfS3hiP7oCBRmfjkQC4fzxVxFhBx8Hkz2aZX8gEvA/jsP3eXRCvzTofP" crossorigin="anonymous"></script>
+    <title>HomeWork4</title>
+    <script src="Scripts/Chart.min.js"></script>
+    <script src="Scripts/Custom.js"></script>
+</head>
+<body class="card-body">
+    <h4>Who is a vampire?</h4>
+    <hr />
+    <div class="form-group">
+        <label>Select a model type</label>
+        <select class="form-control" onchange="LoadModel(this);">
+            <option>Manual Input</option>
+            <option>Random Input</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Number Of Students</label>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <button class="btn btn-outline-secondary" type="button" onclick="SetTable(NumberOfStudents);" id="button-addon1">Update</button>
+            </div>
+            <input type="number" id="NumberOfStudents" min="1" max="5" class="form-control">
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table hide" id="StudentTable">
+            <thead>
+                <tr>
+                    <th>
+                        Student #
+                    </th>
+                    <th>
+                        Has Shadow?
+                    </th>
+                    <th>
+                        Pale Complexion?
+                    </th>
+                    <th>
+                        Eats Garlic?
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
+        <button onclick="MakeModel();" class="btn btn-primary">Create Graph</button>
+    </div>
+
+    <div class="modal" tabindex="-1" id="myModal" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Graph</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <canvas id="myCanvas"></canvas>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
